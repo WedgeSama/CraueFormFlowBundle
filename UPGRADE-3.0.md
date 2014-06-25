@@ -1,5 +1,15 @@
 # Upgrade from 2.1.x to 3.0
 
+## Namespace changes
+
+In order to make the core features available as a standalone library, most files had to be moved into a subfolder.
+Thus, the namespace for those files has changed. Just perform a search & replace in your project to adapt these changes.
+
+- `Craue\FormFlowBundle\Event` to `Craue\FormFlowBundle\FormFlow\Event`
+- `Craue\FormFlowBundle\Exception` to `Craue\FormFlowBundle\FormFlow\Exception`
+- `Craue\FormFlowBundle\Form` to `Craue\FormFlowBundle\FormFlow`
+- `Craue\FormFlowBundle\Storage` to `Craue\FormFlowBundle\FormFlow\Storage`
+
 ## Concurrent instances of the same flow
 
 This version adds support for concurrent instances of the same flow, which required a change in the handling of flows.

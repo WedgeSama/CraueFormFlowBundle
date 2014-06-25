@@ -2,7 +2,7 @@
 
 namespace Craue\FormFlowBundle\Twig\Extension;
 
-use Craue\FormFlowBundle\Form\FormFlow;
+use Craue\FormFlowBundle\FormFlow\FormFlow;
 
 /**
  * Twig extension for form flows.
