@@ -63,6 +63,11 @@ interface FormFlowInterface {
 	function isAllowDynamicStepNavigation();
 
 	/**
+	 * @return boolean
+	 */
+	function isAllowRedirectAfterSubmit();
+
+	/**
 	 * @return string
 	 */
 	function getId();

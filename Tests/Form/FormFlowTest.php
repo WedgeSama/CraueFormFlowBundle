@@ -328,6 +328,28 @@ class FormFlowTest extends \PHPUnit_Framework_TestCase {
 		);
 	}
 
+	/**
+	 * @dataProvider dataSetIsAllowRedirectAfterSubmit
+	 */
+	public function testSetIsAllowRedirectAfterSubmit($expectedValue, $allowRedirectAfterSubmit) {
+		/* @var $flow \PHPUnit_Framework_MockObject_MockObject|\Craue\FormFlowBundle\Form\FormFlow */
+		$flow = $this->getMockForAbstractClass('\Craue\FormFlowBundle\Form\FormFlow');
+
+		$flow->setAllowRedirectAfterSubmit($allowRedirectAfterSubmit);
+
+		$this->assertEquals($expectedValue, $flow->isAllowRedirectAfterSubmit());
+	}
+
+	public function dataSetIsAllowRedirectAfterSubmit() {
+		return array(
+			array(true, true),
+			array(false, false),
+			array(true, 1),
+			array(false, 0),
+			array(false, null),
+		);
+	}
+
 	public function testSetGetDynamicStepNavigationInstanceParameter() {
 		/* @var $flow \PHPUnit_Framework_MockObject_MockObject|\Craue\FormFlowBundle\Form\FormFlow */
 		$flow = $this->getMockForAbstractClass('\Craue\FormFlowBundle\Form\FormFlow');
